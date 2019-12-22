@@ -14,7 +14,9 @@ import {
   Hourglass,
   Window,
   WindowHeader,
-  WindowContent
+  WindowContent,
+  List,
+  Button,
 } from 'react95'
 
 const ResetStyles = createGlobalStyle`
@@ -32,18 +34,16 @@ function App() {
           <Window style={{ width: 400 }}>
             <WindowHeader>Welcome to ToRA95</WindowHeader>
 
-            <Toolbar />
-
             <WindowContent style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexFlow: 'column wrap' }}>
               <img alt='Such Amaze' src={ Doge } draggable={ false } />
               <div style={{ padding: '1rem 0' }}>Wow. Such retro.</div>
               <Hourglass style={{ display: 'block' }} />
             </WindowContent>
-            
+
           </Window>
         </Draggable>
 
-        <AppBar style={{bottom: 0, top: 'unset'}}>
+        <AppBar style={{ bottom: 0, top: 'unset' }}>
           <Toolbar>
 
             <Menu />

@@ -1,15 +1,17 @@
 import React from 'react'
-import { List, ListItem , Button} from 'react95'
+import { List, ListItem, Button} from 'react95'
 
 export default function Menu() {
   const [open, setOpen] = React.useState(false);
 
-  function handleClick() {
+  const handleClick = () => {
     setOpen(!open);
+    document.addEventListener('click', handleClose )
   }
 
-  function handleClose() {
+  const handleClose = () => {
     setOpen(false);
+    document.removeEventListener('click', handleClose)
   }
 
   return (

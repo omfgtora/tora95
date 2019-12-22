@@ -1,4 +1,5 @@
 import React from 'react';
+import './Reset.css'
 import './App.scss';
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Draggable from 'react-draggable'
@@ -13,10 +14,9 @@ import {
   Divider,
   Hourglass,
   Window,
-  WindowHeader,
-  WindowContent,
-  List,
   Button,
+  WindowHeader,
+  WindowContent
 } from 'react95'
 
 const ResetStyles = createGlobalStyle`
@@ -32,10 +32,15 @@ function App() {
 
         <Draggable positionOffset={{ x: '35vw', y: '25vh' }}>
           <Window style={{ width: 400 }}>
-            <WindowHeader>Welcome to ToRA95</WindowHeader>
+            <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span>Welcome to ToRA95</span>
+              <Button style={{ marginRight: '-6px', marginTop: '1px' }} size={'sm'} square>
+                <span style={{ fontWeight: 'bold', transform: 'translateY(-1px)' }}>x</span>
+              </Button>
+            </WindowHeader>
 
             <WindowContent style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexFlow: 'column wrap' }}>
-              <img alt='Such Amaze' src={ Doge } draggable={ false } />
+              <img alt='Doge.png' title='Such Amaze.' src={ Doge } draggable={ false } />
               <div style={{ padding: '1rem 0' }}>Wow. Such retro.</div>
               <Hourglass style={{ display: 'block' }} />
             </WindowContent>
@@ -52,7 +57,7 @@ function App() {
             <span style={{ flexGrow: 1 }}></span>
 
             <Divider style={{ margin: '0 5px'}} vertical={ true } />
-            <Clock style={{ fontWeight: 600 }} />
+            <Clock style={{ fontWeight: 600, padding: '0 8px', fontFamily: 'Roboto Mono, monospace' }} />
 
           </Toolbar>
         </AppBar>
